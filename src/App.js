@@ -1,25 +1,28 @@
 import logo from './logo.svg';
 import './App.css';
+import StepForm from './components/StepForm/StepForm';
+import StepList from "./components/StepList/StepList";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const stepList = [
+        {
+            date: new Date(2021, 12, 30),
+            distance: 8,
+        },
+        {
+            date: new Date(2021, 12, 29),
+            distance: 9,
+        },
+        {
+            date: new Date(2021, 12, 28),
+            distance: 7,
+        },
+    ];
+    return (
+        <>
+            <StepForm steps={stepList}/>
+        </>
+    );
 }
 
 export default App;
